@@ -1,0 +1,47 @@
+doctype <!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title Document
+    body
+
+        // tag with content
+        h1 Hello Pug! How are you?
+
+        // tag width attribute
+        p(style="color:red") color red
+
+        // tag width class and id
+        h3.class#id example with class and id
+
+        // javascript example 
+        - const arry = ['class1', 'class2' , 'class3' , 'class4'];
+        h2(class=arry)#id js arry example 
+
+        // for/each loop
+        each value , index in arry
+            h5=  'the arry value is  = ' + value + ' and index is =' + index
+
+        // condition 
+        - let user = {name : 'kawsar ibn siraj' , isLogged : false}
+        if user.isLogged 
+            h4 welcome back 
+            strong ${user.name}
+        else 
+            a(href="http://") Log In
+
+
+        // switch/case statement
+        - let orderStatus = 'Pending';
+        case orderStatus
+            when 'Pending'
+                p Your order is pending
+
+            when 'Completed'
+                p Your order has been completed
+
+
+        //  js event fire
+        button(onclick="alert('420')") click me
